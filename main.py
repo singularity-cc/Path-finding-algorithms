@@ -1,6 +1,6 @@
 import pygame
-
-from A_star_algorithm import algorithm
+import Dijstra_algorithm
+import A_star_algorithm
 from interactive_background import WIDTH, WIN, make_grid, draw, get_clicked_pos
 
 pygame.display.set_caption("A* Path Find Algorithm")
@@ -53,7 +53,7 @@ def main(win, width):
                         for spot in row:
                             spot.update_neighbors(grid)
 
-                    algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
+                    Dijstra_algorithm.algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
 
                 if event.key == pygame.K_c:
                     start = None
